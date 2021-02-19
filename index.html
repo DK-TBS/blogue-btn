@@ -51,7 +51,7 @@ title: Blogue de Canada.ca
 				<!-- <p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{{ post.date | date_to_long_string}}]</time></p> -->
 
 				<p class="small"><time datetime="[{% assign m = page.date | date: "%-m" %}
-				{{ page.date | date: "%-d" }}
+				{{ post.date | date: "%-d" }}
 				{% case m %}
 				  {% when '1' %}janvier
 				  {% when '2' %}février
@@ -66,8 +66,8 @@ title: Blogue de Canada.ca
 				  {% when '11' %}novembre
 				  {% when '12' %}décembre
 				{% endcase %}
-				{{ page.date | date: "%Y" }}]" class="nowrap">[{% assign m = page.date | date: "%-m" %}
-				{{ page.date | date: "%-d" }}
+				{{ post.date | date: "%Y" }}]" class="nowrap">[{% assign m = post.date | date: "%-m" %}
+				{{ post.date | date: "%-d" }}
 				{% case m %}
 				  {% when '1' %}janvier
 				  {% when '2' %}février
@@ -82,7 +82,7 @@ title: Blogue de Canada.ca
 				  {% when '11' %}novembre
 				  {% when '12' %}décembre
 				{% endcase %}
-				{{ page.date | date: "%Y" }}]</time></p>
+				{{ post.date | date: "%Y" }}]</time></p>
 
       </div><!-- .hght-inhrt -->
 
@@ -125,8 +125,8 @@ title: Blogue de Canada.ca
 <tr>
 <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
 <td>{{ post.description }}</td>
-<td style="white-space:nowrap;">{% assign m = page.date | date: "%-m" %}
-{{ page.date | date: "%-d" }}
+<td style="white-space:nowrap;">{% assign m = post.date | date: "%-m" %}
+{{ post.date | date: "%-d" }}
 {% case m %}
 	{% when '1' %}janvier
 	{% when '2' %}février
@@ -141,7 +141,7 @@ title: Blogue de Canada.ca
 	{% when '11' %}novembre
 	{% when '12' %}décembre
 {% endcase %}
-{{ page.date | date: "%Y" }}</td>
+{{ post.date | date: "%Y" }}</td>
 </tr>
 {% endfor %}
 
