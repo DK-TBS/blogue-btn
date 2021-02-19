@@ -48,7 +48,25 @@ title: Blogue de Canada.ca
 
         <p>{{ post.description }}</p>
 
-				<p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{{ post.date | date_to_long_string}}]</time></p>
+				<!-- <p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{{ post.date | date_to_long_string}}]</time></p> -->
+
+				<p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{% assign m = page.date | date: "%-m" %}
+				{{ page.date | date: "%-d" }}
+				{% case m %}
+				  {% when '1' %}Januar
+				  {% when '2' %}Februar
+				  {% when '3' %}M&auml;rz
+				  {% when '4' %}April
+				  {% when '5' %}Mai
+				  {% when '6' %}Juni
+				  {% when '7' %}Juli
+				  {% when '8' %}August
+				  {% when '9' %}September
+				  {% when '10' %}Oktober
+				  {% when '11' %}November
+				  {% when '12' %}Dezember
+				{% endcase %}
+				{{ page.date | date: "%Y" }}]</time></p>
 
       </div><!-- .hght-inhrt -->
 
@@ -65,29 +83,13 @@ title: Blogue de Canada.ca
 
 
 <!-- Whitespace added for readability -->
-{% assign m = page.date | date: "%-m" %}
-{{ page.date | date: "%-d" }}
-{% case m %}
-  {% when '1' %}Januar
-  {% when '2' %}Februar
-  {% when '3' %}M&auml;rz
-  {% when '4' %}April
-  {% when '5' %}Mai
-  {% when '6' %}Juni
-  {% when '7' %}Juli
-  {% when '8' %}August
-  {% when '9' %}September
-  {% when '10' %}Oktober
-  {% when '11' %}November
-  {% when '12' %}Dezember
-{% endcase %}
-{{ page.date | date: "%Y" }}
+
 
 
 
 <div class="clearfix"></div>
 
-<h2 style="color:red;">Recherche dans tous les billets de blogue</h2>
+<h2 style="color:green;">Recherche dans tous les billets de blogue</h2>
 
 <div class="table-responsive">
 
