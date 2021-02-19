@@ -50,21 +50,37 @@ title: Blogue de Canada.ca
 
 				<!-- <p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{{ post.date | date_to_long_string}}]</time></p> -->
 
-				<p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{% assign m = page.date | date: "%-m" %}
+				<p class="small"><time datetime="[{% assign m = page.date | date: "%-m" %}
 				{{ page.date | date: "%-d" }}
 				{% case m %}
-				  {% when '1' %}Januar
-				  {% when '2' %}Februar
-				  {% when '3' %}M&auml;rz
-				  {% when '4' %}April
-				  {% when '5' %}Mai
-				  {% when '6' %}Juni
-				  {% when '7' %}Juli
-				  {% when '8' %}August
-				  {% when '9' %}September
-				  {% when '10' %}Oktober
-				  {% when '11' %}November
-				  {% when '12' %}Dezember
+				  {% when '1' %}janvier
+				  {% when '2' %}février
+				  {% when '3' %}mars
+				  {% when '4' %}avril
+				  {% when '5' %}mai
+				  {% when '6' %}juin
+				  {% when '7' %}juillet
+				  {% when '8' %}août
+				  {% when '9' %}septembre
+				  {% when '10' %}octobre
+				  {% when '11' %}novembre
+				  {% when '12' %}décembre
+				{% endcase %}
+				{{ page.date | date: "%Y" }}]" class="nowrap">[{% assign m = page.date | date: "%-m" %}
+				{{ page.date | date: "%-d" }}
+				{% case m %}
+				  {% when '1' %}janvier
+				  {% when '2' %}février
+				  {% when '3' %}mars
+				  {% when '4' %}avril
+				  {% when '5' %}mai
+				  {% when '6' %}juin
+				  {% when '7' %}juillet
+				  {% when '8' %}août
+				  {% when '9' %}septembre
+				  {% when '10' %}octobre
+				  {% when '11' %}novembre
+				  {% when '12' %}décembre
 				{% endcase %}
 				{{ page.date | date: "%Y" }}]</time></p>
 
@@ -109,7 +125,23 @@ title: Blogue de Canada.ca
 <tr>
 <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
 <td>{{ post.description }}</td>
-<td style="white-space:nowrap;">{{ post.date | date_to_long_string}}</td>
+<td style="white-space:nowrap;">{% assign m = page.date | date: "%-m" %}
+{{ page.date | date: "%-d" }}
+{% case m %}
+	{% when '1' %}janvier
+	{% when '2' %}février
+	{% when '3' %}mars
+	{% when '4' %}avril
+	{% when '5' %}mai
+	{% when '6' %}juin
+	{% when '7' %}juillet
+	{% when '8' %}août
+	{% when '9' %}septembre
+	{% when '10' %}octobre
+	{% when '11' %}novembre
+	{% when '12' %}décembre
+{% endcase %}
+{{ page.date | date: "%Y" }}</td>
 </tr>
 {% endfor %}
 
