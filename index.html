@@ -48,23 +48,39 @@ title: Blogue de Canada.ca
 
 				<!-- <p class="small"><time datetime="[{{ post.date | date_to_long_string}}]" class="nowrap">[{{ post.date | date_to_long_string}}]</time></p> -->
 
-				<p class="small">{% assign m = post.date | date: "%-d" %}
-				{{ post.date | date: "%-m" }}
+				<p class="small"><time datetime="[{% assign m = page.date | date: "%-m" %}
+				{{ post.date | date: "%-d" }}
 				{% case m %}
-					{% when '1' %}janvier
-					{% when '2' %}février
-					{% when '3' %}mars
-					{% when '4' %}avril
-					{% when '5' %}mai
-					{% when '6' %}juin
-					{% when '7' %}juillet
-					{% when '8' %}août
-					{% when '9' %}septembre
-					{% when '10' %}octobre
-					{% when '11' %}novembre
-					{% when '12' %}décembre
+				  {% when '1' %}janvier
+				  {% when '2' %}février
+				  {% when '3' %}mars
+				  {% when '4' %}avril
+				  {% when '5' %}mai
+				  {% when '6' %}juin
+				  {% when '7' %}juillet
+				  {% when '8' %}août
+				  {% when '9' %}septembre
+				  {% when '10' %}octobre
+				  {% when '11' %}novembre
+				  {% when '12' %}décembre
 				{% endcase %}
-				{{ post.date | date: "%Y" }}</time></p>
+				{{ post.date | date: "%Y" }}]" class="nowrap">[{% assign m = post.date | date: "%-m" %}
+				{{ post.date | date: "%-d" }}
+				{% case m %}
+				  {% when '1' %}janvier
+				  {% when '2' %}février
+				  {% when '3' %}mars
+				  {% when '4' %}avril
+				  {% when '5' %}mai
+				  {% when '6' %}juin
+				  {% when '7' %}juillet
+				  {% when '8' %}août
+				  {% when '9' %}septembre
+				  {% when '10' %}octobre
+				  {% when '11' %}novembre
+				  {% when '12' %}décembre
+				{% endcase %}
+				{{ post.date | date: "%Y" }}]</time></p>
 
       </div><!-- .hght-inhrt -->
 
@@ -96,8 +112,8 @@ title: Blogue de Canada.ca
 			<li>
 			<h2 class="h3"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 			<p>{{ post.description }}</p>
-			<p class="small">{% assign m = post.date | date: "%-d" %}
-			{{ post.date | date: "%-m" }}
+			<p class="small"><time datetime="[{% assign m = page.date | date: "%-m" %}
+			{{ post.date | date: "%-d" }}
 			{% case m %}
 				{% when '1' %}janvier
 				{% when '2' %}février
@@ -112,7 +128,23 @@ title: Blogue de Canada.ca
 				{% when '11' %}novembre
 				{% when '12' %}décembre
 			{% endcase %}
-			{{ post.date | date: "%Y" }}</p>
+			{{ post.date | date: "%Y" }}]" class="nowrap">[{% assign m = post.date | date: "%-m" %}
+			{{ post.date | date: "%-d" }}
+			{% case m %}
+				{% when '1' %}janvier
+				{% when '2' %}février
+				{% when '3' %}mars
+				{% when '4' %}avril
+				{% when '5' %}mai
+				{% when '6' %}juin
+				{% when '7' %}juillet
+				{% when '8' %}août
+				{% when '9' %}septembre
+				{% when '10' %}octobre
+				{% when '11' %}novembre
+				{% when '12' %}décembre
+			{% endcase %}
+			{{ post.date | date: "%Y" }}]</time></p>
 			</li>
 			{% endfor %}
 
